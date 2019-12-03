@@ -1,0 +1,34 @@
+<h3>employee details</h3>
+
+ <hr>
+ name of employee is <b>{{Name}}</b>
+ <h4>Age <b>{{Age}}</b></h4>
+ <h4>Email: <b>{{Email}}</b></h4>
+<h4>permenant address:<b>{{Address.Hname}},{{Address.street}},{{Address.Place}},{{Address.Pcode}}</b></h4>
+hobbies:
+<ul>
+  <li *ngFor ="let hb of Hobbies">{{hb}}
+</ul>
+
+ Projects:<table border="2" >
+  <tr>
+    <td>Title</td>
+    <td>Dept</td>
+    <td>Status</td>
+    <td>Period</td>
+  </tr>
+    <tr *ngFor="let pr of projs">
+    <td>{{pr.title}}</td>
+    <td>{{pr.dept}}</td>
+    <td>{{pr.status}}</td>
+    <td>{{pr.period}}</td>
+  </tr>
+</table>
+<div>
+  <h2>new title is {{Tname}}</h2><input type="text" name="txtprd" [(ngModel)]="Tname"/>
+  <h2>new dept is {{Dname}}</h2><input type="text" name="txtprd" [(ngModel)]="Dname"/>
+  <h2>new status is {{Sname}}</h2><input type="text" name="txtprd" [(ngModel)]="Sname"/>
+  <h2>new period is {{Pname}}</h2><input type="text" name="txtprd" [(ngModel)]="Pname"/>
+</div>
+<br>
+<input type="button" value="add more products" (click)="Add()">

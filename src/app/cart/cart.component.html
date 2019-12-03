@@ -1,0 +1,21 @@
+<h2>cart works!</h2>
+  
+ 
+
+  <table *ngIf="show">
+  <tr *ngFor="let p of products; let i =index">
+ <td> {{p}}</td>
+ <td><input type="button" value="X" (click)="del(i)"></td>
+ </tr>
+</table>
+<div>
+  <h2> new product is {{pname}}</h2>
+  <input type="button" value={{pname}}>
+  <h2>enter product name</h2>
+
+  <input type="text" name="txtprd" [(ngModel)]="pname"/>
+
+</div>
+<br>
+<input type="button" value="add more products" (click)="Add()">
+<input type="button" value="show products" (click)="ShowTable()">
